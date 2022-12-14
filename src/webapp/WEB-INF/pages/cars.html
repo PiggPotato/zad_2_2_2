@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .table {
+        width: 50%;
+        margin-bottom: 20px;
+        border: 5px solid #fff;
+        border-top: 5px solid #fff;
+        border-bottom: 3px solid #fff;
+        border-collapse: collapse;
+        outline: 3px solid #ffd300;
+        font-size: 15px;
+        background: #fff !important;
+    }
+
+    .table th {
+        font-weight: bold;
+        padding: 7px;
+        background: #ffd300;
+        border: none;
+        text-align: center;
+        font-size: 30px;
+        border-top: 3px solid #fff;
+        border-bottom: 3px solid #ffd300;
+    }
+
+    .table td {
+        padding: 7px;
+        border: none;
+        border-top: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+        font-size: 15px;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background: #f8f8f8 !important;
+    }
+</style>
+<body>
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>model</th>
+            <th>maxSpeed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="msg : ${cars}">
+            <th th:utext="${msg.getId()}">VALUE</th>
+            <th th:utext="${msg.getModel()}">VALUE</th>
+            <th th:utext="${msg.getMaxSpeed()}">VALUE</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
